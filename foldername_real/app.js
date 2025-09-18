@@ -6,18 +6,20 @@ const mongoose = require("mongoose");
 const app = express();
 const cors = require('cors')
 //require('dotenv').config();  
-
-
+const mongoose = require('mongoose');
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
 app.use(cors())
 
+
+
 mongoose.connect(process.env.MONGO_URI, {
-    user: process.env.MONGO_USERNAME,
-    pass: process.env.MONGO_PASSWORD,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("✅ MongoDB Connected"))
+.catch(err => console.error("❌ MongoDB Error:", err));
 }, function(err) {
     if (err) {
         console.log("error!! " + err)
