@@ -25,9 +25,6 @@
     "chai-http": "*",
     "mocha": "*"
   }
-  "scripts": {
-  "start": "node app.js",
-  "test": "mocha app-test.js --timeout 10000 --reporter mocha-junit-reporter --exit"
-}
+
 
 }
