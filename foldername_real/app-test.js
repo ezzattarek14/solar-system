@@ -4,6 +4,25 @@ let chai = require("chai");
 let chaiHttp = require("chai-http");
 
 
+before((done) => {
+  const Planet = mongoose.model("planets");
+  Planet.deleteMany({})
+    .then(() => Planet.insertMany([
+      { id: 1, name: "Mercury" },
+      { id: 2, name: "Venus" },
+      { id: 3, name: "Earth" },
+      { id: 4, name: "Mars" },
+      { id: 5, name: "Jupiter" },
+      { id: 6, name: "Saturn" },
+      { id: 7, name: "Uranus" },
+      { id: 8, name: "Neptune" }
+    ]))
+    .then(() => done())
+    .catch(err => done(err));
+});
+
+
+
 // Assertion 
 chai.should();
 chai.use(chaiHttp); 
