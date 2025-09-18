@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 .then(() => console.log("✅ MongoDB Connected"))
 .catch(err => console.error("❌ MongoDB Error:", err));
-, function(err) {
+function(err) {
     if (err) {
         console.log("error!! " + err)
     } else {
