@@ -38,3 +38,7 @@ jobs:
         with:
           name: Mocha-Test-Result
           path: foldername_real/test-results.xml  
+      - name: Start server
+        run: |
+          nohup npm start &  
+          sleep 3         
